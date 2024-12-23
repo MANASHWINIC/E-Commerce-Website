@@ -1,4 +1,4 @@
-                                                                         E-Commerce Website
+                                                                  E-Commerce Website
 Project Overview:
        This project focuses on developing a feature-rich e-commerce website designed to provide a seamless shopping experience for customers and an efficient management system 
   for administrators. The platform aims to make online shopping intuitive, engaging, and secure, catering to various product categories and user needs.The frontend is 
