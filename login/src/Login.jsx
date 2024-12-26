@@ -16,9 +16,13 @@ function Login() {
     axios.post('http://localhost:4000/login', { email, password })
       .then((result) => {
         console.log(result);
-        if (result.data === 'Success') {
+        if (result.data === 'Success' && email!=="admin@gmail.com") {
           navigate('/home');
-        } else {
+        } 
+        if (result.data === 'Success' && email==="admin@gmail.com") {
+          navigate('/admin');
+        } 
+        else {
           setError('Incorrect email or password'); // Set error if login fails
         }
       })
@@ -29,6 +33,11 @@ function Login() {
   };
 
   return (
+    <div>
+      <nav style={styles.navbar}>
+          <h1 style={styles.title}>E-Commerce Application</h1>
+
+      </nav>
     <div className="d-flex justify-content-center align-items-center vh-100" style={{ backgroundColor: '#6c757d' }}>
       <div className="register-container bg-white p-4 rounded shadow" style={{ maxWidth: '400px', width: '100%' }}>
         <h2 className="text-center mb-4">Login</h2>
@@ -70,7 +79,31 @@ function Login() {
         </div>
       </div>
     </div>
+    </div>
   );
 }
+const styles = {
+  navbar: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: '10px 20px',
+      backgroundColor: '#333',
+      color: 'white',
+  },
+  title: {
+      fontSize: '24px',
+      margin: 0,
+  },
+  button: {
+      padding: '8px 16px',
+      fontSize: '16px',
+      color: '#333',
+      backgroundColor: '#f0f0f0',
+      border: 'none',
+      borderRadius: '4px',
+      cursor: 'pointer',
+  },
+};
 
 export default Login;
