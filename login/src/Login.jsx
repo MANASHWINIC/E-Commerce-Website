@@ -16,11 +16,9 @@ function Login() {
     axios.post('http://localhost:4000/login', { email, password })
       .then((result) => {
         console.log(result);
-<<<<<<< HEAD
         if (result.data === 'Success') {
           navigate('/home');
         } else {
-=======
         if (result.data === 'Success' && email!=="admin@gmail.com") {
           navigate('/home');
         } 
@@ -28,7 +26,6 @@ function Login() {
           navigate('/admin');
         } 
         else {
->>>>>>> a8e6168e4f235ee514a01e61872e5e981d5d5f08
           setError('Incorrect email or password'); // Set error if login fails
         }
       })
