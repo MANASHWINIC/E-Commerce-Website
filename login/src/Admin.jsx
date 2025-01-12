@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { useNavigate } from 'react-router-dom';
 function Admin ()  {
     const navigate=useNavigate();
@@ -72,4 +72,91 @@ const styles = {
     },
 };
 
+export default Admin;*/
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+function Admin() {
+    const navigate = useNavigate();
+
+    function addProduct() {
+        navigate('/addaproduct');
+    }
+
+    function viewProducts() {
+        navigate('/ViewProducts');
+    }
+
+    return (
+        <div>
+            <nav style={styles.navbar}>
+                <h1 style={styles.title}>E-Commerce Application</h1>
+            </nav>
+            <div style={styles.container}>
+                <div style={styles.card}>
+                    <h2 style={styles.cardTitle}>Add a Product</h2>
+                    <button style={styles.cardButton} onClick={addProduct}>
+                        Add Product
+                    </button>
+                </div>
+                <div style={styles.card}>
+                    <h2 style={styles.cardTitle}>View Products</h2>
+                    <button style={styles.cardButton} onClick={viewProducts}>
+                        View Products
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+const styles = {
+    navbar: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '10px 20px',
+        backgroundColor: '#333',
+        color: 'white',
+    },
+    title: {
+        fontSize: '24px',
+        margin: 0,
+    },
+    container: {
+        display: 'flex',
+        justifyContent: 'space-around',
+        marginTop: '20px',
+    },
+    card: {
+        margin: '20px',
+        padding: '20px',
+        border: '1px solid #ccc',
+        borderRadius: '8px',
+        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+        backgroundColor: '#fff',
+        width: '200px',
+        height: '200px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    cardTitle: {
+        fontSize: '20px',
+        margin: '0 0 10px',
+        textAlign: 'center',
+    },
+    cardButton: {
+        padding: '8px 16px',
+        fontSize: '16px',
+        color: '#fff',
+        backgroundColor: '#007BFF',
+        border: 'none',
+        borderRadius: '4px',
+        cursor: 'pointer',
+    },
+};
+
 export default Admin;
+

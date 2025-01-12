@@ -7,6 +7,7 @@ import Home from './Home';
 import Admin from './Admin';
 import Addproduct from './Addproduct';
 
+
 function App() {
   
   return (
@@ -17,11 +18,10 @@ function App() {
       <Route path='/home' element ={<Home/>}></Route>
       <Route path='/admin' element={<Admin/>}></Route>
       <Route path='/addaproduct' element={<Addproduct/>}></Route>
-
       
     </Routes>
     </BrowserRouter>
   )
 }
 
-export default App
+export default App;
